@@ -1,6 +1,6 @@
-from board_item import BoardItem
+from boarditems.board_item import BoardItem
 from datetime import date
-from item_status import ItemStatus
+from boarditems.item_status import ItemStatus
 
 
 class Issue(BoardItem):
@@ -10,7 +10,10 @@ class Issue(BoardItem):
 
     @property
     def description(self):
-        return self._description
+        if hasattr(self,"_description"):
+            return self._description
+        else:
+            return 'No description'
 
     def info(self):
         return f'Issue ({self.description}) {super().info()}'
