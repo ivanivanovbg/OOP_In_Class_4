@@ -1,4 +1,4 @@
-from boarditems import task
+import boarditems.task as task
 import re
 from boarditems.item_status import *
 class User():
